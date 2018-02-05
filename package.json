@@ -1,6 +1,6 @@
 {
-  "name": "graphql-compose-connection",
-  "version": "0.0.0-semantically-released",
+  "name": "graphql-compose-connection-mongo",
+  "version": "0.0.0-3",
   "description": "Plugin for `graphql-compose` which provide a connection resolver for types.",
   "files": [
     "lib",
@@ -62,6 +62,7 @@
     ]
   },
   "scripts": {
+    "publish_npmjs": "npm set registry=https://registry.npmjs.com && npm publish && npm set registry=https://registry.npm.taobao.org",
     "build": "npm run build-cjs && npm run build-flow",
     "build-cjs": "rimraf lib && babel src --ignore __tests__,__mocks__ -d lib",
     "build-flow": "find ./src -name '*.js' -not -path '*/__*' | while read filepath; do cp $filepath `echo $filepath | sed 's/\\/src\\//\\/lib\\//g'`.flow; done",
